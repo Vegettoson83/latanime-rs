@@ -1,0 +1,22 @@
+name = "latanime-rs"
+main = "build/worker/shim.mjs"
+compatibility_date = "2026-04-04"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[vars]
+TMDB_KEY     = ""
+BRIDGE_URL   = "https://latanime-bridge.onrender.com"
+MFP_URL      = ""
+MFP_PASSWORD = "latanime"
+
+[[kv_namespaces]]
+binding     = "STREAM_CACHE"
+id          = "19b6cbbb876343ffa950e8a72959b7f3"
+
+[[d1_databases]]
+binding       = "CATALOG_DB"
+database_name = "latanime-catalog"
+database_id   = "e3bd3541-35c4-4fc7-9bbe-cf914bdff113"
